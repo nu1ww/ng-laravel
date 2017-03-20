@@ -15,11 +15,7 @@ app.controller('userController',[ '$scope','$location','userModel',function($sco
              $location.path('/dashboard');
           });
 
-    },
-    doLogout:function () {
-            userModel.doLogout();
-              $location.path('/');
-
     }
+
   });
 }]);

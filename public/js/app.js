@@ -24,6 +24,11 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider,$locati
             templateUrl : "template/dashboard.html",
             controller: "userController",
             authenticated:true
+        })
+        .when("/add", {
+            templateUrl : "template/add.html",
+            controller: "userController",
+            authenticated:true
         }).otherwise('/');
 }]);
 

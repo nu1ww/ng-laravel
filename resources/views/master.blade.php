@@ -13,16 +13,13 @@
     {{--App Controllers --}}
     <script src="js/model.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/controllers/globalController.js"></script>
+
 
 </head>
-<body>
-<nav class="navbar navbar-inverse" role="navigation">
+<body ng-controller="globalController">
 
-    <ul class="nav navbar-nav">
-        <li><a ui-sref="home">Home</a></li>
-        <li><a ui-sref="about">About</a></li>
-    </ul>
-</nav>
+
 <div ng-view></div>
 </body>
 </html>

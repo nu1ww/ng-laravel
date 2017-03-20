@@ -7,7 +7,7 @@ app.factory('userModel', ['$http','$cookies',function($http,$cookies){
 
    userModel.doLogin = function (userObj) {
 
-     alert('ok');
+  //   alert('ok');
 
     return   $http({
            method: 'POST',
@@ -18,12 +18,13 @@ app.factory('userModel', ['$http','$cookies',function($http,$cookies){
            data: { email: userObj.email,
                password: userObj.password}
        }).success(function (response) {
-          $cookies.put('auth',response);
-           console.log(response);
+
+          $cookies.put('auth',JSON.stringify(response));
+          console.log(response);
 
        }).error(function (data,status,header) {
            console.log(data,status,header);
-           alert(data);
+           //alert(data);
        });
    };
 
@@ -35,6 +36,13 @@ app.factory('userModel', ['$http','$cookies',function($http,$cookies){
      }else {
         return false;
      }
+
+   };
+
+   userModel.getUserObject=function () {
+
+      var userObj=angular.fromJson($cookies.get('auth'));
+      return userObj;
 
    };
 
