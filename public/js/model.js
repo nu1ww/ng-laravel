@@ -7,8 +7,6 @@ app.factory('userModel', ['$http','$cookies',function($http,$cookies){
 
    userModel.doLogin = function (userObj) {
 
-  //   alert('ok');
-
     return   $http({
            method: 'POST',
            url: baseUrl+'auth',
