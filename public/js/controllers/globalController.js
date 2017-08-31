@@ -18,3 +18,6 @@ app.controller('navController',['$scope','$location','userModel',function ($scop
   url:'/add'}]
   });
 }]);
+
+
+//test
